@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.canvas-container {
+    /* position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -25%);
+     */
+
+    /* background-color: rgb(250, 235, 215, .2); */
+}
+
+button,
+.inputfile + label {
+    font-family: inherit;
+    margin: 10px;
+    padding: 5px;
+    width: 100px;
+    border: 1px solid rgb(243, 243, 102);
+    border-radius: 4px;
+    background-color: rgb(245, 245, 220);
+    
+}
+
+.buttons-container {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+canvas {
+     border: 3px solid rgb(250, 235, 215, .2);
+}
+
+.add-image {
+    display: none;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: rgb(253, 253, 120);
+}
+
+
+
+.add-image-container img {
+    max-width: 300px;
+    width: 100%;
+    max-height: 150px;
+}
+
+.preview {
+    display: none;
+}
+
+.picker {
+    display: inline-block;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(3, 1, 1, 0.08);
+  }
+
+  

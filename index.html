@@ -4,7 +4,7 @@
     <script src="jquery-3.3.1.min.js"></script>
     <script src="fabric.js"></script>
     <script src='spectrum.js'></script>
-    <script src="index.js"></script>
+   
 
 
 
@@ -20,37 +20,65 @@
       <canvas id="c" width="600" height="300"></canvas>
     </div>
     
+    <div class="right-container">
+
+      <div class="buttons-container">
+        <ul>
+          <li>
+            <a id="main-objects" href="#container-main-objects" class="open">Main objects</a>
+          </li>
+          <li>
+            <a id="image" href="#container-image" class="open">Image</a>
+          </li>
+          <li>
+            <a id="text" href="#container-text" class="open">Text</a>
+          </li>
+        </ul>
+        
+            
+      </div>
+        
+     
+      <div id="container-main-objects" class="content-container main-objects">
+        <div class="canvasBackground">
+            Canvas background: <input id="canvas-background" type='color' value="#ffffff"/>
+        </div>
+
+        <button class="add-square">Add rectangle</button>
+        <button class="add-square">Add circle</button>
+        <button class="add-square">Add triangle</button>
+        <button class="add-square">Add line</button>
+      </div>
+
+      <div id="container-image" class="content-container image">
+        <div class="add-image-container">
+          <input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile" ><label for="file">Choose a file</label><br>
+          <img src="" height="200" alt="Image preview..."><br>
+          <button class="clearField">Clear field</button>
+        </div>
     
-    <div class="buttons-container">
-      <button class="add-square">Add square</button>
-      <button class="add-text">Add text</button>
-      <button class="image">Image</button>
+        <button class="add-image">Add image</button>
+      </div>
+
+      <div id="container-text" class="content-container text">
+        <div class="textColor">
+          <input id="text-color" type='color'/>
+        </div>
+
+        <button class="add-text">Add text</button>
+      
       <button class="bold">Bold</button>
-      <button class="delete">Delete item</button>     
+      <button class="bold2">Bold</button>
+      </div>  
+      
+      
+      <button class="delete">Delete item</button> 
     </div>
 
-  
-
-
-    <div class="add-image-container">
-      <!-- <input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile" ><label for="file">Choose a file</label><br>
-      <img src="" height="200" alt="Image preview..."><br>
-      <button class="clearField">Clear field</button> -->
-    </div>
-
-    <button class="add-image">Add image</button>
-
-
-    <!-- text -->
-    <input id="text-color" type='color'/>
-
-    
-   
-    
-    
     
 
-
     
+    
+    <script src="index.js"></script>
   </body>
 </html>

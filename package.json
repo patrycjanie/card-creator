@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "a-color-picker": "^1.1.7"
+    "a-color-picker": "^1.1.7",
+    "node-sass": "^4.11.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass main.scss style.css -w"
   },
   "author": "Patrycja Niestrój",
   "license": "ISC"

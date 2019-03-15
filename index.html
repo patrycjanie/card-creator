@@ -1,14 +1,10 @@
 <html>
-  <title>sample</title>
+  <title>Simple</title>
   <head> 
     <script src="jquery-3.3.1.min.js"></script>
     <script src="fabric.js"></script>
-    <script src='spectrum.js'></script>
-   
-
-
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,800" rel="stylesheet">
     <link rel='stylesheet' href='spectrum.css' />
     <link rel="stylesheet" href="style.css">
     
@@ -19,13 +15,14 @@
     <div class="canvas-container">
       <canvas id="c" width="600" height="300"></canvas>
     </div>
-    
+
     <div class="right-container">
 
+      <!-- --------------------------BUTTONS-------------------------- -->
       <div class="buttons-container">
         <ul>
           <li>
-            <a id="main-objects" href="#container-main-objects" class="open">Main objects</a>
+            <a id="main-objects" href="#container-objects" class="open">Objects</a>
           </li>
           <li>
             <a id="image" href="#container-image" class="open">Image</a>
@@ -33,41 +30,62 @@
           <li>
             <a id="text" href="#container-text" class="open">Text</a>
           </li>
-        </ul>
-        
-            
+        </ul>          
       </div>
         
-     
-      <div id="container-main-objects" class="content-container main-objects">
-        <div class="canvasBackground">
-            Canvas background: <input id="canvas-background" type='color' value="#ffffff"/>
+      <!-- --------------------------OBJECTS-------------------------- -->
+
+      <div id="container-objects" class="content-container main-objects">
+        
+        <div class="new-object">
+          <p class="description">Add new object:</p>
+          <button class="add-square">Rectangle</button>
+          <button class="add-circle">Circle</button>
+          <button class="add-triangle">Triangle</button>
+          <button class="add-line">Line</button>
         </div>
 
-        <button class="add-square">Add rectangle</button>
-        <button class="add-square">Add circle</button>
-        <button class="add-square">Add triangle</button>
-        <button class="add-square">Add line</button>
+        <div class="object-color description">
+          Change color of a selected object: <input id="object-color" type='color' value="#ffffff"/>
+        </div>
+
+        <div class="canvas-background description">
+          Canvas background: <input id="canvas-background" type='color' value="#ffffff"/>
+        </div>
+
       </div>
 
-      <div id="container-image" class="content-container image">
+      <!-- --------------------------IMAGE-------------------------- -->
+
+      <div id="container-image" class="content-container image active">
         <div class="add-image-container">
-          <input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile" ><label for="file">Choose a file</label><br>
-          <img src="" height="200" alt="Image preview..."><br>
-          <button class="clearField">Clear field</button>
+          <input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile"><label for="file">Choose a file: </label><br>
+          <img src="" alt="image preview">
         </div>
-    
         <button class="add-image">Add image</button>
       </div>
 
+<!-- 
+      <div class="add-image-container">
+          <input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile" ><label for="file">Choose a file</label><br>
+          <img src="" height="200" alt="Image preview...">
+        </div> -->
+
+
+      <!-- --------------------------TEXT-------------------------- -->
+
       <div id="container-text" class="content-container text">
-        <div class="textColor">
-          <input id="text-color" type='color'/>
+
+        <textarea id="new-text" name="new-text" rows="5" cols="33">New text...</textarea>
+
+        <button class="add-itext">Add text</button>
+
+        <div class="text-color description">
+          Text color: <input id="text-color" type='color'/>
         </div>
 
-        <button class="add-text">Add text</button>
       
-      <button class="bold">Bold</button>
+      <button class="bold">B</button>
       <button class="bold2">Bold</button>
       </div>  
       

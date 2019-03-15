@@ -4,6 +4,91 @@ $(document).ready(function($) {
         backgroundColor: ''
     });
 
+    // -----cards manipulation-----
+    $( "a.open" ).click( function() {
+        let buttons = $('.buttons-container')
+        buttons.find('li').removeClass('clicked');
+        $(this).parent().addClass('clicked');
+
+        let elem = $('.right-container')
+        elem.find('div.content-container').removeClass('active'); 
+        elem.find('div.content-container.' + $(this).attr('id')).addClass('active');    
+    });
+
+
+    let colorValue = document.getElementById('text-color').value;
+
+    // --------------------------------MAIN OBJECTS--------------------------------
+
+    //-----add new square button-----
+
+    $( ".add-square" ).click(function() {
+        let rect = new fabric.Rect({ 
+            left: 100, 
+            top: 150, 
+            fill: 'red', 
+            width: 200,
+            height: 200
+        });
+
+        canvas.add(rect);
+    });
+
+    //-----add new circle button-----
+
+    $( ".add-circle" ).click(function() {
+        let rect = new fabric.Circle({ 
+            left: 100, 
+            top: 150, 
+            fill: 'green', 
+            radius: 30
+        });
+
+        canvas.add(rect);
+    });
+
+    //-----add new triangle button-----
+
+    $( ".add-triangle" ).click(function() {
+        let rect = new fabric.Triangle({ 
+            left: 200, 
+            top: 100, 
+            fill: 'pink', 
+            width: 30,
+            height: 20
+        });
+
+        canvas.add(rect);
+    });
+
+    //-----add new line button-----
+
+    $( ".add-line" ).click(function() {
+        let rect = new fabric.Line([100, 100, 300, 100], { 
+            stroke: 'red',
+            strokeWidth: 1,
+        });
+
+        canvas.add(rect);
+    });
+
+
+    let colorInput = document.getElementById('object-color');
+
+    colorInput.addEventListener( 'change', function() {
+        let obj = canvas.getActiveObject();
+        $(obj).prop('fill', this.value);
+        canvas.renderAll();  
+    });
+   
+    // -----changing color of a selected object-----
+    // document.getElementById('object-color').onchange = function(){
+
+    //     let obj = canvas.getActiveObject();
+    //     $(obj).prop('fill', this.value);       
+    //     canvas.renderAll();
+    // }
+
 
     // -----changing canvas background color-----
     document.getElementById('canvas-background').onchange = function(){
@@ -12,55 +97,20 @@ $(document).ready(function($) {
     }
 
 
-    // -----cards manipulation-----
-    $( "a.open" ).click( function() {
-        let elem = $('.right-container')
-        elem.find('div.content-container').removeClass('active'); 
-        elem.find('div.content-container.' + $(this).attr('id')).addClass('active');    
-    });
+    // let colorValue = document.getElementById('text-color').value;
 
 
-
-    
- 
-
-    let colorValue = document.getElementById('text-color').value;
-
-    //-----add new square button-----
-
-    $( ".add-square" ).click(function() {
-        let rect = new fabric.Rect({ 
-            left: 100, 
-            top: 150, 
-            fill: 'red', 
-            width: 200,
-            height: 200
-        });
-
-        canvas.add(rect);
-    });
-
-    //-----add new square button-----
-
-    $( ".add-square" ).click(function() {
-        let rect = new fabric.Rect({ 
-            left: 100, 
-            top: 150, 
-            fill: 'red', 
-            width: 200,
-            height: 200
-        });
-
-        canvas.add(rect);
-    });
+    // --------------------------------TEXT--------------------------------
 
     //-----add new IText button-----
 
-    $( ".add-text" ).click(function() {
-        let txtArea= new fabric.IText('your text here', {
+    $( ".add-itext" ).click(function() {
+        let message = document.getElementById('new-text').value; 
+        let color =  document.getElementById('text-color').value; 
+        let txtArea= new fabric.IText(message, {
             left: 100, 
             top: 100,
-            fill: '#123456',
+            fill: color,
             fontWeight: 'normal'
         });
 
@@ -68,6 +118,19 @@ $(document).ready(function($) {
    
 
     });
+
+    // $( ".add-itext" ).click(function() {
+    //     let txtArea= new fabric.IText('your text here', {
+    //         left: 100, 
+    //         top: 100,
+    //         fill: '#123456',
+    //         fontWeight: 'normal'
+    //     });
+
+    //     canvas.add(txtArea);
+   
+
+    // });
 
    
    
@@ -95,11 +158,20 @@ $(document).ready(function($) {
 
     });
 
-    $( '.bold2' ).click(function() {
-        canvas.getActiveObject().setSelectionStyles({fontWeight: 'bold'});
-        canvas.renderAll();
+    $( '.text-color' ).click(function() {
+        $( '#text-color' ).change(function() {
+            let obj = canvas.getActiveObject();
+            $(obj).prop('fill', this.value);       
+            canvas.renderAll();
+        });
 
     });
+
+    // colorInput.addEventListener( 'change', function() {
+    //     let obj = canvas.getActiveObject();
+    //     $(obj).prop('fill', this.value);
+    //     canvas.renderAll();  
+    // });
 
     // function addHandler(id, fn, eventName) {
     //     document.getElementById(id)[eventName || 'onclick'] = function() {
@@ -112,101 +184,100 @@ $(document).ready(function($) {
     //   }
     
 
-    //-----add new image-----
+
+    // --------------------------------IMAGE--------------------------------
     
     //----select image----
 
     
 
-        $('.add-image-container').html('<input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple /><label for="file">Choose a file</label><span></span><br><img src="" alt="Image preview..." class="preview"><br><button class="clearField">Clear field</button>');
-        $('.add-image').css('display', 'block');
+    $('.add-image-container').html('<input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple /><label for="file">Choose a file</label><span></span><br><img src="" alt="Image preview..." class="preview"><br>');
+    $('.add-image').css('display', 'block');
 
-        var input = document.querySelector('input[type="file"]');
+    let input = document.querySelector('input[type="file"]');
 
-        var inputs = document.querySelectorAll( '.inputfile' );
-Array.prototype.forEach.call( inputs, function( input )
-{
-	var label	 = input.nextElementSibling,
+    let inputs = document.querySelectorAll( '.inputfile' );
+
+    Array.prototype.forEach.call( inputs, function( input ) {
+        let label	 = input.nextElementSibling,
         labelVal = label.innerHTML,
         labelDescription = label.nextElementSibling;
 
-	input.addEventListener( 'change', function( e )
-	{
-		var fileName = '';
-		if( this.files && this.files.length > 1 ){
-            fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
-        }
-			
-		else {
-            fileName = e.target.value.split( '\\' ).pop();
-        }
-			
-
-		if( fileName ) {
-            labelDescription.innerHTML = fileName;
-        }
-			
-		else {
-            label.innerHTML = labelVal;
-        }
-			
-	});
-});
-
-        input.addEventListener('change', function(event){
-    
-            var preview = document.querySelector('img');
-            var file = document.querySelector('input[type=file]').files[0];
-            var reader = new FileReader();
-            var fileName = document.querySelector('.add-image-container span');
-
-            reader.addEventListener("load", function () {
-                // preview.css('display', 'block');
-                preview.src = reader.result;
-            }, false);
-
-            if (file) {
-                reader.readAsDataURL(file);
+        input.addEventListener( 'change', function( e ) {
+            let fileName = '';
+            if( this.files && this.files.length > 1 ){
+                fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
             }
+                
+            else {
+                fileName = e.target.value.split( '\\' ).pop();
+            }
+                
 
-            $( ".clearField" ).click(function() {
-                preview.src ="";   
-                input.value="";
-                fileName.innerHTML="";
-            });
-        });       
-   
-
-    //-----add selected image-----
-
-    $( ".add-image" ).click(function() {
-
-        var preview = document.querySelector('img');
-
-        let oImg= new fabric.Image.fromURL(preview.src, function(oImg) {
-            canvas.add(oImg);
+            if( fileName ) {
+                labelDescription.innerHTML = fileName;
+            }
+                
+            else {
+                label.innerHTML = labelVal;
+            }
+                
         });
-
     });
 
+    input.addEventListener('change', function(event){
+
+        var preview = document.querySelector('img');
+        var file = document.querySelector('input[type=file]').files[0];
+        var reader = new FileReader();
+        var fileName = document.querySelector('.add-image-container span');
+
+        reader.addEventListener("load", function () {
+            preview.src = reader.result;
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+
+        $( ".add-image" ).click(function() {         
+            let oImg= new fabric.Image.fromURL(preview.src, function(oImg) {
+                canvas.add(oImg);
+            });
+    
+            preview.src ="";   
+            input.value="";
+            fileName.innerHTML="";
+    
+        });   
+    });       
+   
+
+  
+   
+   
 
     
 
-    //-----delete selected item-----
+     // --------------------------------DELETE--------------------------------
+
+    function deleting() {
+        canvas.remove(canvas.getActiveObject());
+    }
 
     // ----with button-----
 
-    $( ".delete" ).click(function() {
-        canvas.remove(canvas.getActiveObject());
-    });
+    $( ".delete" ).click(deleting);
 
     // ----with delete key-----
 
     $( "html" ).keydown(function(e) {
         if(e.keyCode  == 46) {
-            canvas.remove(canvas.getActiveObject());
+            deleting() 
         }
     });
+
+    
     
 });
 

@@ -3,9 +3,10 @@
   <head> 
     <script src="jquery-3.3.1.min.js"></script>
     <script src="fabric.js"></script>
+    <script src="FileSaver.min.js"></script>
+    <script src="canvas-toBlob.js"></script>
     
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,800" rel="stylesheet">
-    <link rel='stylesheet' href='spectrum.css' />
     <link rel="stylesheet" href="style.css">
     
 
@@ -16,12 +17,12 @@
       <canvas id="c" width="600" height="300"></canvas>
     </div>
 
-    <div class="right-container">
+    <div id="nav" class="right-container">
 
       <!-- --------------------------BUTTONS-------------------------- -->
       <div class="buttons-container">
         <ul>
-          <li>
+          <li class="clicked">
             <a id="main-objects" href="#container-objects" class="open">Objects</a>
           </li>
           <li>
@@ -32,10 +33,12 @@
           </li>
         </ul>          
       </div>
+
+     
         
       <!-- --------------------------OBJECTS-------------------------- -->
 
-      <div id="container-objects" class="content-container main-objects">
+      <div id="container-objects" class="content-container main-objects active">
         
         <div class="new-object">
           <p class="description">Add new object:</p>
@@ -46,36 +49,31 @@
         </div>
 
         <div class="object-color description">
-          Change color of a selected object: <input id="object-color" type='color' value="#ffffff"/>
+          Objects color: <input id="object-color" type='color' value="#000000"/>
         </div>
 
         <div class="canvas-background description">
-          Canvas background: <input id="canvas-background" type='color' value="#ffffff"/>
+          <p>Canvas background:</p> choose color <input id="canvas-background" type='color' value="#ffffff"/> or 
+          <!-- <label title="Add a background" class="myFile2"><span class="mdi mdi-image">add image</span>&nbsp;<input type="file" id="file2" /></label> -->
+
+          <input type="file" accept=".jpeg,.jpg,.gif" name="file2" id="file2" class="inputfile"><label for="file2" title="Add a background" class="myFile2">add a background</label>
+          <button class="remove" >Remove background image</button>
         </div>
 
       </div>
 
       <!-- --------------------------IMAGE-------------------------- -->
 
-      <div id="container-image" class="content-container image active">
-        <div class="add-image-container">
-          <input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile"><label for="file">Choose a file: </label><br>
-          <img src="" alt="image preview">
-        </div>
-        <button class="add-image">Add image</button>
+      <div id="container-image" class="content-container image">
+        <input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile"><label for="file" title="Add an image">Add image</label><br>
       </div>
-
-<!-- 
-      <div class="add-image-container">
-          <input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile" ><label for="file">Choose a file</label><br>
-          <img src="" height="200" alt="Image preview...">
-        </div> -->
 
 
       <!-- --------------------------TEXT-------------------------- -->
 
       <div id="container-text" class="content-container text">
 
+        Enter text:
         <textarea id="new-text" name="new-text" rows="5" cols="33">New text...</textarea>
 
         <button class="add-itext">Add text</button>
@@ -84,13 +82,27 @@
           Text color: <input id="text-color" type='color'/>
         </div>
 
-      
-      <button class="bold">B</button>
-      <button class="bold2">Bold</button>
+      <div class="text-manipulation">
+        <label for="bold" class="checkbox-button">
+          <input type="checkbox" name="bold" id="bold"><span class="for-bold">bold</span>
+        </label>
+        <label for="italic" class="checkbox-button">
+          <input type="checkbox" name="italic" id="italic"><span class="for-italic">italic</span>
+        </label>
+        <label for="underline" class="checkbox-button">
+          <input type="checkbox" name="underline" id="underline"><span class="for-underline">underline</span>
+        </label>
+          
+      </div>
+
       </div>  
       
       
-      <button class="delete">Delete item</button> 
+      <div class="bottom-buttons">
+        <button class="delete">Delete item</button> 
+        <button class="save">Save as image</button>
+      </div>
+       
     </div>
 
     

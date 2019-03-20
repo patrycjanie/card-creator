@@ -3,56 +3,35 @@
   padding: 0; }
 
 body {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box; }
+
+header {
+  height: 25vh;
+  position: relative;
+  background-image: url(trianglify.png);
+  background-size: cover;
+  background-position: center center;
   font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
+  font-size: 25px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw)); }
+  header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    color: #8F8F8E; }
+
+.card-creator {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  height: 55vh; }
 
 canvas {
   border: 3px solid rgba(31, 31, 31, 0.2);
   box-sizing: border-box; }
-
-ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row; }
-  ul li {
-    box-sizing: border-box; }
-    ul li a {
-      text-decoration: none;
-      color: inherit;
-      width: 100%;
-      display: block; }
-
-li,
-button,
-.inputfile + label,
-.checkbox-button {
-  font-size: 0.9rem;
-  font-family: inherit;
-  text-align: center;
-  margin: 0 10px;
-  padding: 5px;
-  min-width: 100px;
-  border: 1px solid #f3f366;
-  border-radius: 4px;
-  background-color: beige; }
-  li:hover, li:active, li:visited,
-  button:hover,
-  button:active,
-  button:visited,
-  .inputfile + label:hover,
-  .inputfile + label:active,
-  .inputfile + label:visited,
-  .checkbox-button:hover,
-  .checkbox-button:active,
-  .checkbox-button:visited {
-    background-color: #fdfd78; }
-
-.clicked {
-  background-color: #fdfd78; }
 
 .right-container {
   height: 300px;
@@ -62,47 +41,114 @@ button,
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between; }
-
-.content-container {
-  display: none; }
-
-.active {
-  display: block; }
-
-.buttons-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start; }
-
-.inputfile {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1; }
-
-.description {
-  padding: 10px 0; }
-
-#nav .buttons-container {
-  width: 100%;
-  border-bottom: 1px solid #dddddd; }
-  #nav .buttons-container li {
-    margin: 0;
-    border-radius: 10px 10px 0 0;
-    border: none; }
-
-#container-objects .canvas-background p {
-  padding: 15px 0; }
-
-#container-text .text-manipulation .checkbox-button {
-  display: inline-flex;
-  justify-content: center;
-  min-width: 30px; }
-  #container-text .text-manipulation .checkbox-button .for-bold {
-    font-weight: 800; }
-  #container-text .text-manipulation .checkbox-button .for-italic {
-    font-style: italic; }
-  #container-text .text-manipulation .checkbox-button input {
+  .right-container li,
+  .right-container button,
+  .right-container .inputfile + label,
+  .right-container .checkbox-button {
+    font-size: 0.9rem;
+    font-family: inherit;
+    text-align: center;
+    margin: 0 10px;
+    padding: 5px;
+    min-width: 100px;
+    border: 1px solid #D6D6C1;
+    border-radius: 4px;
+    background-color: #FCFCF6; }
+    .right-container li:hover, .right-container li:active, .right-container li:visited,
+    .right-container button:hover,
+    .right-container button:active,
+    .right-container button:visited,
+    .right-container .inputfile + label:hover,
+    .right-container .inputfile + label:active,
+    .right-container .inputfile + label:visited,
+    .right-container .checkbox-button:hover,
+    .right-container .checkbox-button:active,
+    .right-container .checkbox-button:visited {
+      background-color: #F5F5DC; }
+  .right-container .clicked {
+    background-color: #F5F5DC; }
+  .right-container .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1; }
+  .right-container .inputcolor {
+    border: 1px solid #D6D6C1;
+    background-color: #FCFCF6;
+    border-radius: 4px; }
+  .right-container .content-container {
     display: none; }
+  .right-container .active {
+    display: block; }
+  .right-container .description {
+    padding: 10px 0; }
+  .right-container #container-buttons {
+    width: 100%;
+    border-bottom: 1px solid #D6D6C1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; }
+    .right-container #container-buttons ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row; }
+      .right-container #container-buttons ul li {
+        margin: 0;
+        border-radius: 5px 30px 0 0;
+        border: none; }
+        .right-container #container-buttons ul li a {
+          text-decoration: none;
+          color: inherit;
+          width: 100%;
+          display: block; }
+  .right-container #container-objects .change-canvas-background p {
+    padding: 15px 0; }
+  .right-container #container-image label {
+    display: inline-block;
+    margin-bottom: 15px; }
+  .right-container #container-text #text-font,
+  .right-container #container-text #new-text,
+  .right-container #container-text #text-color {
+    font-family: inherit;
+    margin: 0 10px;
+    border: 1px solid #D6D6C1;
+    border-radius: 4px;
+    display: inline; }
+  .right-container #container-text .new-text {
+    display: flex;
+    align-items: center; }
+  .right-container #container-text .text-manipulation {
+    margin: 15px 0; }
+    .right-container #container-text .text-manipulation .checkbox-button {
+      display: inline-flex;
+      justify-content: center;
+      min-width: 30px; }
+      .right-container #container-text .text-manipulation .checkbox-button .for-bold {
+        font-weight: 800; }
+      .right-container #container-text .text-manipulation .checkbox-button .for-italic {
+        font-style: italic; }
+      .right-container #container-text .text-manipulation .checkbox-button .for-underline {
+        text-decoration: underline; }
+      .right-container #container-text .text-manipulation .checkbox-button .for-overline {
+        text-decoration: overline; }
+      .right-container #container-text .text-manipulation .checkbox-button .for-linethrough {
+        text-decoration: line-through; }
+      .right-container #container-text .text-manipulation .checkbox-button input {
+        display: none; }
+  .right-container #bottom-buttons {
+    width: 100%;
+    border-top: 1px solid #D6D6C1; }
+    .right-container #bottom-buttons button {
+      margin-top: 10px; }
+
+.footer {
+  height: 20vh;
+  position: relative;
+  background-image: url(trianglify.png);
+  background-size: cover;
+  background-position: right bottom;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  clip-path: polygon(0 0, 100% calc(2vw), 100% 100%, 0 100%); }

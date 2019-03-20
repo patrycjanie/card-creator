@@ -4,13 +4,44 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
     
     box-sizing: border-box;
+}
+
+header {
+    height: 25vh;
+    position: relative;
+    background-image: url(trianglify.png);
+    background-size: cover;
+    background-position: center center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 calc(100% - 2vw)
+      );
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        color: #8F8F8E
+    }
+}
+
+
+
+.card-creator {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    // margin: 60px 0;
+    height: 55vh;
 }
 
 canvas {
@@ -18,50 +49,6 @@ canvas {
     box-sizing: border-box;
 }
 
-ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-
-    li {
-        box-sizing: border-box;
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            width: 100%;
-            display: block;
-            
-        }
-    }
-}
-
-
-li,
-button,
-.inputfile + label,
-.checkbox-button {
-    font-size: 0.9rem;
-    font-family: inherit;
-    text-align: center; 
-    margin: 0 10px;
-    padding: 5px;
-    min-width: 100px;
-    border: 1px solid rgb(243, 243, 102);
-    border-radius: 4px;
-    background-color: rgb(245, 245, 220);
-
-    &:hover,
-    &:active,
-    &:visited {
-        background-color: rgb(253, 253, 120);
-    }
-    
-}
-
-.clicked {
-    background-color:  rgb(253, 253, 120);
-}
 
 .right-container {
     height: 300px;
@@ -71,96 +58,186 @@ button,
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+
+    li,
+    button,
+    .inputfile + label,
+    .checkbox-button {
+        font-size: 0.9rem;
+        font-family: inherit;
+        text-align: center; 
+        margin: 0 10px;
+        padding: 5px;
+        min-width: 100px;
+        border: 1px solid #D6D6C1;
+        border-radius: 4px;
+        background-color: #FCFCF6;
+
+        &:hover,
+        &:active,
+        &:visited {
+            background-color: #F5F5DC;
+        }
+    }
+
+    .clicked {
+        background-color: #F5F5DC;
+    }
+
+    .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .inputcolor {
+        border: 1px solid #D6D6C1;
+        background-color: #FCFCF6;
+        border-radius: 4px;
+    }
+
+    .content-container {
+        display: none;
+    }
     
-}
-
-.content-container {
-    display: none;
-
-
-
-
-}
-
-.active {
-    display: block;
-}
-
-.buttons-container {
-
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
+    .active {
+        display: block;
+    }
+    
+    .description {
+        padding: 10px 0;
+    }
+    
 
 
+    // ---------------CONTAINERS STYLING---------------
 
-
-
-
-.inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-
-// .inputfile:focus + label,
-// .inputfile + label:hover {
-//     background-color: rgb(253, 253, 120);
-// }
-
-
-
-.description {
-    padding: 10px 0;
-}
-
-#nav {
-    .buttons-container {
+    #container-buttons {
         width: 100%;
-        border-bottom: 1px solid #dddddd;
+        border-bottom: 1px solid #D6D6C1;
 
-        li {
-            margin: 0;
-            border-radius: 10px 10px 0 0;
-            border: none;
-        }
-    }
-}
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
 
-#container-objects {
-    .canvas-background {
-        p {
-            padding: 15px 0;
-        }
-    }
-}
-
-#container-text {
-    .text-manipulation {
-        .checkbox-button {
-            display: inline-flex;
-            justify-content: center;
-            min-width: 30px;
-
-            .for-bold {  
-                font-weight: 800;  
-            }  
-
-            .for-italic {
-                font-style: italic;
-            }   
-
-            input {
-                display: none;
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+        
+            li {
+                margin: 0;
+                border-radius: 5px 30px 0 0;
+                border: none;
+        
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                    width: 100%;
+                    display: block;
+                    
+                }
             }
-         
-        }   
+        }
+    }
+
+    #container-objects {
+        .change-canvas-background {
+            p {
+                padding: 15px 0;
+            }
+        }
+    }
+
+    #container-image {
+        label {
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+    }
+    
+    #container-text {
+        #text-font,
+        #new-text,
+        #text-color {     
+            font-family: inherit;
+            margin: 0 10px;
+            border: 1px solid #D6D6C1; 
+            border-radius: 4px;
+            display: inline;
+        }
+
+        .new-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-manipulation {
+            margin: 15px 0;
+            .checkbox-button {
+                display: inline-flex;
+                justify-content: center;
+                min-width: 30px;
+    
+                .for-bold {  
+                    font-weight: 800;  
+                }  
+    
+                .for-italic {
+                    font-style: italic;
+                }   
+    
+                .for-underline {
+                    text-decoration: underline;
+                }
+
+                .for-overline {
+                    text-decoration: overline;
+                }
+
+                .for-linethrough {
+                    text-decoration: line-through;
+                }   
+    
+                input {
+                    display: none;
+                }
+             
+            }   
+        }
+    }
+
+    #bottom-buttons {
+        width: 100%;
+        border-top: 1px solid #D6D6C1;
+
+        button {
+            margin-top: 10px;
+        }
     }
 }
+
+.footer {
+    height: 20vh;
+    position: relative;
+    background-image: url(trianglify.png);
+    background-size: cover;
+    background-position: right bottom;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    clip-path: polygon(
+        0 0,
+        100% calc(2vw),
+        100% 100%,
+        0 100%,
+     
+      );
+}
+
+
 
 
 

@@ -1,0 +1,33 @@
+-dobrze dzialajace kolory OK
+	- podswietlenie input przy zanaczeniu obiektu na canvas - getstyleatposition
+-bold jako funkcja + dzialanie w dwie strony  - BOLD JAKO CHECKBOX OK - dostylowanie jak button OK - moze jako tertiary operator? + jak chceckbox is checked wtedy .clicked
+-changing already created  text with input - 
+-ujednolicenie funkcji
+-font size - najlepiej jako +/- plus wartosci z klawiatury
+
+
+
+uwagi Szymon
+-dostylowanie bootrsap
+-tresc inputa i kolory
+-ew. inna value poczatkowa
+-poczatkowe elementy ktorych nie mozna zmienic
+
+
+- nie da sie zmienic czcionki tylko na edytowanym fragmencie!!!!!!!!!!
+
+
+
+
++ change color of a line (it would be perfect if it was possible with the same button as the other objects) - STROKE
++ image as background OK + ostylowanie + remove image button
++ mozliwosc zapisania do img - OK
++ changing color of selected text
++ czcionki  OK ostylowanie
++ kolejnoœæ zdjêæ
+
+
+~change color without 'change' (only on click) because with change it is not possible to change the color without chosing the color again (one can't use previously selected)
+
+
+    

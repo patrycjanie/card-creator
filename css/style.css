@@ -9,7 +9,7 @@ body {
 header {
   height: 25vh;
   position: relative;
-  background-image: url(trianglify.png);
+  background-image: url(../img/trianglify.png);
   background-size: cover;
   background-position: center center;
   font-family: 'Montserrat', sans-serif;
@@ -27,7 +27,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 55vh; }
+  height: 65vh; }
 
 canvas {
   border: 3px solid rgba(31, 31, 31, 0.2);
@@ -83,7 +83,8 @@ canvas {
   .right-container .active {
     display: block; }
   .right-container .description {
-    padding: 10px 0; }
+    padding: 10px 0;
+    margin-bottom: 0; }
   .right-container #container-buttons {
     width: 100%;
     border-bottom: 1px solid #D6D6C1;
@@ -144,9 +145,9 @@ canvas {
       margin-top: 10px; }
 
 .footer {
-  height: 20vh;
+  height: 10vh;
   position: relative;
-  background-image: url(trianglify.png);
+  background-image: url(../img/trianglify.png);
   background-size: cover;
   background-position: right bottom;
   font-family: 'Montserrat', sans-serif;

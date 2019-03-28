@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "compile:sass": "node-sass main.scss style.css -w"
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
   },
   "author": "Patrycja Niestrój",
   "license": "ISC"

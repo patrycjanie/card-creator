@@ -7,33 +7,79 @@ $(document).ready(function($) {
 
 
     // --------------------------------CUSTOM RECTANGULAR--------------------------------
-    let rectC = new fabric.Rect({ 
-        left: 300, 
-        top: 150, 
-        fill: '#fa32d2', 
-        width: 70,
-        height: 70,
+    let rectC4 = new fabric.Rect({ 
+        left: 450, 
+        top: -150,
+        angle: 45, 
+        fill: '#1E88E5', 
+        width: 50,
+        height: 600,
         hasControls: false,
         lockMovementX: true, 
         lockMovementY: true
     });
 
-    canvas.add(rectC);
+    canvas.add(rectC4);
+
+    let rectC1 = new fabric.Rect({ 
+        left: -100, 
+        top: 0,
+        angle: 45, 
+        fill: '#E3F2FD', 
+        width: 500,
+        height: 500,
+        hasControls: false,
+        lockMovementX: true, 
+        lockMovementY: true
+    });
+
+    canvas.add(rectC1);
+
+    let rectC2 = new fabric.Rect({ 
+        left: 100, 
+        top: 180,
+        angle: 225, 
+        fill: '#1565C0', 
+        width: 500,
+        height: 500,
+        hasControls: false,
+        lockMovementX: true, 
+        lockMovementY: true
+    });
+
+    canvas.add(rectC2);
 
     // --------------------------------CUSTOM TEXT--------------------------------
     
-        let txtAreaC= new fabric.IText('dsafSDF', {
-            left: 100, 
-            top: 100,
+        let name= new fabric.IText('Jan Kowlaski\nul. Krakowska 123\n123-34 Warszawa', {
+            left: 350, 
+            top: 150,
             editable: false,
+            fontSize: 18,
+            lineHeight: 1.3,
             hasControls: false,
             lockMovementX: true, 
             lockMovementY: true,
             evented: false
         });
 
-        canvas.add(txtAreaC);
+        canvas.add(name);
 
+        let brand= new fabric.IText('BRAND NAME', {
+            left: 350, 
+            top: 100,
+            editable: false,
+            fontSize: 24,
+            fontWeight: 'bold',
+            fill: '#90CAF9',
+            fontFamily: 'Arial',
+            hasControls: false,
+            lockMovementX: true, 
+            lockMovementY: true,
+            evented: false
+        });
+
+        canvas.add(brand);
 
     // -----cards manipulation-----
     $( "a.open" ).click( function() {

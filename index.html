@@ -1,11 +1,11 @@
 <html>
   <title>Simple Card Creator</title>
   <head> 
-    <script src="jquery-3.3.1.min.js"></script>
-    <script src="fabric.js"></script>
-    <script src="FileSaver.min.js"></script>
-    <script src="canvas-toBlob.js"></script>
-    <script src="WebFontLoader.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/fabric.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+    <script src="js/canvas-toBlob.js"></script>
+    <script src="js/WebFontLoader.js"></script>
 
     <script>
       WebFont.load({
@@ -15,8 +15,9 @@
       });
     </script>
     
-    <link href="https://fonts.googleapis.com/css?family=Bad+Script|Kaushan+Script|Lato:300|Lobster|Montserrat:300,800|Open+Sans|Open+Sans+Condensed:300|Oswald|PT+Sans|Pinyon+Script|Raleway|Roboto|Roboto+Condensed|Slabo+27px|Source+Sans+Pro" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script|Kaushan+Script|Lato:300|Lobster|Montserrat:300,700,800|Open+Sans|Open+Sans+Condensed:300|Oswald|PT+Sans|Pinyon+Script|Raleway|Roboto|Roboto+Condensed|Slabo+27px|Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     
 
   </head>
@@ -28,7 +29,7 @@
       </h1>
     </header>
 
-    <section class="card-creator">
+    <section class="card-creator row">
       
       <div class="canvas-container">
         <canvas id="c" width="600" height="300"></canvas>
@@ -166,6 +167,6 @@
 
     
     
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

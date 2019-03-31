@@ -27,14 +27,17 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 65vh; }
+  margin: 0; }
 
 canvas {
   border: 3px solid rgba(31, 31, 31, 0.2);
   box-sizing: border-box; }
 
+.container {
+  display: flex;
+  flex-direction: row; }
+
 .right-container {
-  height: 300px;
   width: 600px;
   margin-left: 30px;
   display: flex;
@@ -85,16 +88,19 @@ canvas {
   .right-container .description {
     padding: 10px 0;
     margin-bottom: 0; }
+  .right-container .new-line {
+    display: flex;
+    flex-direction: row; }
+  .right-container .buttons-group {
+    width: 70%; }
   .right-container #container-buttons {
     width: 100%;
-    border-bottom: 1px solid #D6D6C1;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start; }
+    border-bottom: 1px solid #D6D6C1; }
     .right-container #container-buttons ul {
       list-style-type: none;
       display: flex;
-      flex-direction: row; }
+      flex-direction: row;
+      margin: 0; }
       .right-container #container-buttons ul li {
         margin: 0;
         border-radius: 5px 30px 0 0;

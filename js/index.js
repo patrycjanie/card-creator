@@ -57,6 +57,7 @@ $(document).ready(function($) {
             editable: false,
             fontSize: 18,
             lineHeight: 1.3,
+            fontFamily: 'Arial',
             hasControls: false,
             lockMovementX: true, 
             lockMovementY: true,

@@ -5,7 +5,6 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    
     box-sizing: border-box;
 }
 
@@ -39,8 +38,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    // margin: 60px 0;
-    height: 65vh;
+    margin: 0;
 }
 
 canvas {
@@ -48,9 +46,12 @@ canvas {
     box-sizing: border-box;
 }
 
+.container {
+    display: flex;
+    flex-direction: row;
+}
 
 .right-container {
-    height: 300px;
     width: 600px;
     margin-left: 30px;
     display: flex;
@@ -110,6 +111,15 @@ canvas {
         padding: 10px 0;
         margin-bottom: 0;
     }
+
+    .new-line {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .buttons-group {
+        width: 70%;
+    }
     
 
 
@@ -119,14 +129,15 @@ canvas {
         width: 100%;
         border-bottom: 1px solid #D6D6C1;
 
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
+        // display: flex;
+        // flex-direction: row;
+        // align-items: flex-start;
 
         ul {
             list-style-type: none;
             display: flex;
             flex-direction: row;
+            margin: 0;
         
             li {
                 margin: 0;

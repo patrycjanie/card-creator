@@ -31,131 +31,135 @@
 
     <section class="card-creator row">
       
-      <div class="canvas-container">
-        <canvas id="c" width="600" height="300"></canvas>
-      </div>
-  
-      <div class="right-container">
-  
-        <!-- --------------------------BUTTONS-------------------------- -->
-        <div id="container-buttons">
-          <ul>
-            <li class="clicked">
-              <a id="main-objects" href="#container-objects" class="open">Objects</a>
-            </li>
-            <li>
-              <a id="image" href="#container-image" class="open">Image</a>
-            </li>
-            <li>
-              <a id="text" href="#container-text" class="open">Text</a>
-            </li>
-          </ul>          
+      <div class="container">
+        <div class="canvas-container">
+          <canvas id="c" width="600" height="300"></canvas>
         </div>
-  
-        
+    
+        <div class="right-container">
+    
+          <!-- --------------------------BUTTONS-------------------------- -->
+          <div id="container-buttons">
+            <ul>
+              <li class="clicked btn btn-sm">
+                <a id="main-objects" href="#container-objects" class="open">Objects</a>
+              </li>
+              <li class="btn btn-sm">
+                <a id="image" href="#container-image" class="open">Image</a>
+              </li>
+              <li class="btn btn-sm">
+                <a id="text" href="#container-text" class="open">Text</a>
+              </li>
+            </ul>          
+          </div>
+    
           
-        <!-- --------------------------OBJECTS-------------------------- -->
-  
-        <div id="container-objects" class="content-container main-objects active">
-          
-          <div class="new-object">
-            <p class="description">Add new object:</p>
-            <button class="add-square">Rectangle</button>
-            <button class="add-circle">Circle</button>
-            <button class="add-triangle">Triangle</button>
-            <button class="add-line">Line</button>
-          </div>
-
-          <div class="order">
-            <p class="description">Change order:</p>
-            <button class="bring-front">Bring to front</button>
-            <button class="bring-forward">Bring forward</button>
-            <button class="send-back">Send to back</button>
-            <button class="send-backwards">Send backwards</button>
-          </div>
-  
-          <div class="change-object-color description">
-            Objects color: <input id="object-color" type='color' value="#000000" class="inputcolor" />
-          </div>
-  
-          <div class="change-canvas-background description">
-            <p>Canvas background:</p> choose color <input id="canvas-background" type='color' value="#ffffff" class="inputcolor"/> or 
-  
-            <input type="file" accept=".jpeg,.jpg,.gif" name="file2" id="file2" class="inputfile"><label for="file2" title="Add a background" class="myFile2">Add background image</label>
-            <button class="remove" >Remove background image</button>
-          </div>
-  
-        </div>
-  
-        <!-- --------------------------IMAGE-------------------------- -->
-  
-        <div id="container-image" class="content-container image">
-          <input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile"><label for="file" title="Add an image">Choose image</label><span class="link"></span><br>
-          <button class="add-image">Add image</button>
-        </div>
-  
-  
-        <!-- --------------------------TEXT-------------------------- -->
-  
-        <div id="container-text" class="content-container text">
-          <div class="new-text"> Enter text: 
-            <textarea id="new-text" name="new-text" rows="3" cols="33">New text...</textarea>
-            <button class="add-itext">Add text</button>
-          </div>
-  
-          <div class="change-text-color description">
-            Text color: <input id="text-color" type='color' class="inputcolor"/>
-          </div>
-  
-          <div class="change-text-font description">
-            Text font:  <select id="text-font" name="font">
-                          <option value="" disabled selected>Select font</option>
-                          <option value="Arial">Arial</option>
-                          <option value="Bad Script">Bad Script</option>
-                          <option value="Kaushan Script">Kaushan Script</option>
-                          <option value="Lato">Lato</option>
-                          <option value="Lobster">Lobster</option>
-                          <option value="Montserrat">Montserrat</option>
-                          <option value="Open Sans">Open Sans</option>
-                          <option value="Open Sans Condensed">Open Sans Condensed</option>
-                          <option value="Oswald">Oswald</option>
-                          <option value="PT Sans">PT Sans</option>
-                          <option value="Pinyon Script">Pinyon Script</option>
-                          <option value="Raleway">Raleway</option>
-                          <option value="Roboto">Roboto</option>
-                          <option value="Roboto Condensed">Roboto Condensed</option>
-                          <option value="Slabo 27px">Slabo 27px</option>
-                          <option value="Source Sans Pro">Source Sans Pro</option>
-                        </select>
-          </div>
-  
-          <!-- --------------------------EDIT STYLE BUTTONS-------------------------- -->
-          <div class="text-manipulation">
-            <label for="bold" class="checkbox-button">
-              <input type="checkbox" name="bold" id="bold"><span class="for-bold">bold</span>
-            </label>
-            <label for="italic" class="checkbox-button">
-              <input type="checkbox" name="italic" id="italic"><span class="for-italic">italic</span>
-            </label>
-            <label for="underline" class="checkbox-button">
-              <input type="checkbox" name="underline" id="underline"><span class="for-underline">underline</span>
-            </label>
-            <label for="overline" class="checkbox-button">
-              <input type="checkbox" name="overline" id="overline"><span class="for-overline">overline</span>
-            </label>
-            <label for="linethrough" class="checkbox-button">
-              <input type="checkbox" name="linethrough" id="linethrough"><span class="for-linethrough">linethrough</span>
-            </label>
-          </div>
-  
-        </div>  
-        
-        
-        <div id="bottom-buttons">
-          <button class="delete">Delete item</button> 
-          <button class="save">Save as image</button>
-        </div>
             
+          <!-- --------------------------OBJECTS-------------------------- -->
+    
+          <div id="container-objects" class="content-container main-objects active">
+            
+            <div class="new-object new-line">
+              <p class="description">Add new object:</p>
+              <div class="buttons-group">
+                <button class="add-square btn btn-sm">Rectangle</button>
+                <button class="add-circle btn btn-sm">Circle</button>
+                <button class="add-triangle btn btn-sm">Triangle</button>
+                <button class="add-line btn btn-sm">Line</button> 
+              </div>
+            </div>
+
+            <div class="order">
+              <p class="description">Change order:</p>
+              <button class="bring-front">Bring to front</button>
+              <button class="bring-forward">Bring forward</button>
+              <button class="send-back">Send to back</button>
+              <button class="send-backwards">Send backwards</button>
+            </div>
+    
+            <div class="change-object-color description">
+              Objects color: <input id="object-color" type='color' value="#000000" class="inputcolor" />
+            </div>
+    
+            <div class="change-canvas-background description">
+              <p>Canvas background:</p> choose color <input id="canvas-background" type='color' value="#ffffff" class="inputcolor"/> or 
+    
+              <input type="file" accept=".jpeg,.jpg,.gif" name="file2" id="file2" class="inputfile"><label for="file2" title="Add a background" class="myFile2">Add background image</label>
+              <button class="remove" >Remove background image</button>
+            </div>
+    
+          </div>
+    
+          <!-- --------------------------IMAGE-------------------------- -->
+    
+          <div id="container-image" class="content-container image">
+            <input type="file" accept=".png,.jpeg,.jpg,.gif" name="file" id="file" class="inputfile"><label for="file" title="Add an image">Choose image</label><span class="link"></span><br>
+            <button class="add-image">Add image</button>
+          </div>
+    
+    
+          <!-- --------------------------TEXT-------------------------- -->
+    
+          <div id="container-text" class="content-container text">
+            <div class="new-text"> Enter text: 
+              <textarea id="new-text" name="new-text" rows="3" cols="33">New text...</textarea>
+              <button class="add-itext">Add text</button>
+            </div>
+    
+            <div class="change-text-color description">
+              Text color: <input id="text-color" type='color' class="inputcolor"/>
+            </div>
+    
+            <div class="change-text-font description">
+              Text font:  <select id="text-font" name="font">
+                            <option value="" disabled selected>Select font</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Bad Script">Bad Script</option>
+                            <option value="Kaushan Script">Kaushan Script</option>
+                            <option value="Lato">Lato</option>
+                            <option value="Lobster">Lobster</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Open Sans">Open Sans</option>
+                            <option value="Open Sans Condensed">Open Sans Condensed</option>
+                            <option value="Oswald">Oswald</option>
+                            <option value="PT Sans">PT Sans</option>
+                            <option value="Pinyon Script">Pinyon Script</option>
+                            <option value="Raleway">Raleway</option>
+                            <option value="Roboto">Roboto</option>
+                            <option value="Roboto Condensed">Roboto Condensed</option>
+                            <option value="Slabo 27px">Slabo 27px</option>
+                            <option value="Source Sans Pro">Source Sans Pro</option>
+                          </select>
+            </div>
+    
+            <!-- --------------------------EDIT STYLE BUTTONS-------------------------- -->
+            <div class="text-manipulation">
+              <label for="bold" class="checkbox-button">
+                <input type="checkbox" name="bold" id="bold"><span class="for-bold">bold</span>
+              </label>
+              <label for="italic" class="checkbox-button">
+                <input type="checkbox" name="italic" id="italic"><span class="for-italic">italic</span>
+              </label>
+              <label for="underline" class="checkbox-button">
+                <input type="checkbox" name="underline" id="underline"><span class="for-underline">underline</span>
+              </label>
+              <label for="overline" class="checkbox-button">
+                <input type="checkbox" name="overline" id="overline"><span class="for-overline">overline</span>
+              </label>
+              <label for="linethrough" class="checkbox-button">
+                <input type="checkbox" name="linethrough" id="linethrough"><span class="for-linethrough">linethrough</span>
+              </label>
+            </div>
+    
+          </div>  
+          
+          
+          <div id="bottom-buttons">
+            <button class="delete">Delete item</button> 
+            <button class="save">Save as image</button>
+          </div>
+              
+          </div>
         </div>
     </section>
     

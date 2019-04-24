@@ -8,9 +8,9 @@ Project is created with:
 * jQuery
 
 ## Demo
-You can check it out here: [Patrycja Niestrój - The Pepe](https://patrycjanie.github.io/card-creator/)
+You can check it out here: [Patrycja Niestrój - Card Creator](https://patrycjanie.github.io/card-creator/)
 
 ## Credits
 Used libraries: 
-    * [fabric.js](http://fabricjs.com/)
+* [fabric.js](http://fabricjs.com/)
 
